@@ -16,6 +16,10 @@ class _HomeViewState extends State<HomeView> {
     // TODO: implement initState
     super.initState();
     notificationServices.requestNotificationPermission();
+    notificationServices.isTokenRefresh();
+    notificationServices.getDeviceToken().then((value) {
+      print("Device Token :- ${value.toString()}");
+    });
   }
 
   @override
